@@ -1,5 +1,58 @@
 @include('frontjers.headerNL')
 
+
+
+      <!-- ===============================================SLIDER2============================================= -->
+      
+              <!-- Team Roster: Slider -->
+              <div class="team-roster team-roster--slider">
+
+                  @foreach(explode('|',$images2->urlimage) as $key => $url)
+                  <!-- Article -->
+                  <div class="team-roster__item">
+                    <!-- Article Photo -->
+                    <figure class="team-roster__img">
+                      <img src="../../../app/photos/{{$url}}" style="width:420px;height:430px;" alt="">
+                    </figure>
+                    <!-- Article Photo / End-->
+                  
+                    <!-- FAB (More Info)-->
+                    <div class="team-roster__player-fab">
+                      <a href="#" class="team-roster__player-more">
+                        <span class="btn-fab btn-fab--sm"></span>
+                        <span class="team-roster__player-fab-txt">Cliquez<br>Voir photo</span>
+                      </a>
+                    </div>
+                    <!-- FAB (More Info) / End -->
+                  </div>
+                  <!-- Article / End -->
+                  @endforeach
+
+                  @foreach(explode('|',$images2->urlimage) as $key => $url)
+                  <!-- Article -->
+                  <div class="team-roster__item">
+                    <!-- Article Photo -->
+                    <figure class="team-roster__img">
+                      <img src="../../../app/photos/{{$url}}" style="width:420px;height:430px;" alt="">
+                    </figure>
+                    <!-- Article Photo / End-->
+
+                    <!-- FAB (More Info)-->
+                    <div class="team-roster__player-fab">
+                      <a href="" class="team-roster__player-more">
+                        <span class="btn-fab btn-fab--sm"></span>
+                        <span class="team-roster__player-fab-txt">Cliquez<br>Voir photo</span>
+                      </a>
+                    </div>
+                    <!-- FAB (More Info) / End -->
+                  </div>
+                  <!-- Article / End -->
+                  @endforeach
+
+              </div>
+          <!-- Team Roster: Slider / End -->
+    
+      <!-- ===============================================FIN SLIDER2============================================= -->
  
     
 
@@ -27,57 +80,8 @@
                                             
                                         
 
-      <!-- ===============================================SLIDER============================================= -->
-      
-              <!-- Team Roster: Slider -->
-              <div class="team-roster team-roster--slider">
 
-                  @foreach(explode('|',$images2->urlimage) as $key => $url)
-                  <!-- Player -->
-                  <div class="team-roster__item">
-                    <!-- Player Photo -->
-                    <figure class="team-roster__img">
-                      <img src="../../../app/photos/{{$url}}" style="height:450px;" alt="">
-                    </figure>
-                    <!-- Player Photo / End-->
-                  
-                    <!-- FAB (More Info)-->
-                    <div class="team-roster__player-fab">
-                      <a href="#" class="team-roster__player-more">
-                        <span class="btn-fab btn-fab--sm"></span>
-                        <span class="team-roster__player-fab-txt">Check the<br>Player's Bio</span>
-                      </a>
-                    </div>
-                    <!-- FAB (More Info) / End -->
-                  </div>
-                  <!-- Player / End -->
-                  @endforeach
-
-                  @foreach(explode('|',$images2->urlimage) as $key => $url)
-                  <!-- Player -->
-                  <div class="team-roster__item">
-                    <!-- Player Photo -->
-                    <figure class="team-roster__img">
-                      <img src="../../../app/photos/{{$url}}" style="height:450px;" alt="">
-                    </figure>
-                    <!-- Player Photo / End-->
-
-                    <!-- FAB (More Info)-->
-                    <div class="team-roster__player-fab">
-                      <a href="" class="team-roster__player-more">
-                        <span class="btn-fab btn-fab--sm"></span>
-                        <span class="team-roster__player-fab-txt">Check the<br>Player's Bio</span>
-                      </a>
-                    </div>
-                    <!-- FAB (More Info) / End -->
-                  </div>
-                  <!-- Player / End -->
-                  @endforeach
-
-              </div>
-          <!-- Team Roster: Slider / End -->
-    
-      <!-- ===============================================FIN SLIDER============================================= -->
+                                        
 
 
 
@@ -378,6 +382,12 @@
           </div>
           <!-- Player Sidebar / End -->
         </div>
+
+
+
+
+
+
 
       </div>
     </div>

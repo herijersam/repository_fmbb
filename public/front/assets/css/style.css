@@ -1734,7 +1734,7 @@ td.team-leader__avg{text-align:center;}
 .team-roster-table__header{text-transform:uppercase;background-color:#f5f7f9;}
 @media (min-width:992px){.team-roster-table__header{padding-left:23px !important;}
 }
-.team-roster--slider{background:#151719 url("../images/team-roster-slider-bg.jpg") 50% 50% no-repeat;background-size:cover;border:1px solid #e4e7ed;border-radius:4px;margin-bottom:15px;padding-top:40px;padding-bottom:10px;}
+.team-roster--slider{background:#151719 url("../images/ball.jpg") 50% 50% no-repeat;background-size:cover;border:1px solid #e4e7ed;border-radius:4px;margin-bottom:15px;padding-top:40px;padding-bottom:10px;}
 @media (min-width:768px){.team-roster--slider{padding:54px 0 20px 0;}
 }
 @media (min-width:992px){.team-roster--slider{padding:70px 0 20px 0;}

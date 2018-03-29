@@ -147,7 +147,7 @@ Route::prefix('admin')->group(function () {
 
 /**----------------------------------------------Front-end jersam---------------------------------------------------- */
 
-Route::prefix('front')->group(function(){
+
     
         Route::get('/accueil',array('as'=>'accueil','uses'=>'FrontController@index'));
         Route::get('/articles/{id}',array('as'=>'articles','uses'=>'FrontController@showarticles')); 
@@ -188,7 +188,7 @@ Route::prefix('front')->group(function(){
                 Route::get('login/google/callback', array('as'=>'google/callback','uses'=>'Auth\SocialController@callback'));
                 Route::get('login/twitter/callback', array('as'=>'twitter/callback','uses'=>'Auth\SocialController@callback'));
                 Auth::routes();
-    });
+  
 
 /**----------------------------------------------Fin Front-end jersam--------------------------------------------------*/
 

@@ -121,7 +121,7 @@
             </form>
           </div>
           <!-- Header Search Form / End -->
-          <ul class="info-block info-block--header">
+          <!--<ul class="info-block info-block--header">
             <li class="info-block__item info-block__item--contact-secondary">
               <svg role="img" class="df-icon df-icon--basketball">
                 <use xlink:href="../front/assets/images/icons-basket.svg#basketball"/>
@@ -130,7 +130,7 @@
               <a class="info-block__link" href="mailto:info@alchemists.com"></a>
             </li>
 
-          </ul>
+          </ul>-->
         </div>
       </div>
       <!-- Header Secondary / End -->
