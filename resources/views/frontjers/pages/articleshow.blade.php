@@ -79,21 +79,7 @@
                                         
                                             
                                         
-
-
-                                        
-
-
-
-
-
-
-
-
-
-
-
-
+                                      
                                         
                                     </div>
                                 </div>
@@ -154,14 +140,14 @@
                                                   </div>
                                                 </div>
                                                 <div class="comment__reply">
-                                                  <a href="" class="comment__reply-link btn btn-link btn-xs" data-toggle="modal" data-target="#modal-reply">Répondre</a>
+                                                <button onclick="myFunction()">Répondre</button>
                                                 </div>
                                               </header>
                                               <div class="comment__body">
                                                 {{ $comments->comment }}
                                               </div>
                                             </div>
-                                          @foreach($affimage as $aff)
+                                          @foreach($reponse as $rep)
                                             <ul class="comments--children">
                                               <li class="comments__item">
                                                 <div class="comments__inner">
@@ -171,7 +157,7 @@
                                                         <img src="../../front/assets/images/samples/avatar-7.jpg" alt="">
                                                       </figure>
                                                       <div class="comment__author-info">
-                                                        <h5 class="comment__author-name">{{$aff->name}}</h5>
+                                                        <h5 class="comment__author-name">{{$rep->name}}</h5>
                                                         <time class="comment__post-date" datetime="2016-08-23">3 hours ago</time>
                                                       </div>
                                                     </div>
@@ -180,56 +166,86 @@
                                                     </div>
                                                   </header>
                                                   <div class="comment__body">
-                                                  {{$aff->comment}} 
+                                                  {{$rep->comment}} 
                                                   </div>
                                                 </div>
                                               </li>
                                             </ul>
                                           @endforeach
+
                                           </li>
 
 
 
+                  <!-- Réponse commentaire -->
+
+                 <!-- <li class="comments__item">
+                    
+
+                    <ul class="comments--children">
+                      <li class="comments__item">
+                        <div class="comments__inner">
+                          <header class="comment__header">
+                            <div class="comment__author">
+                              <figure class="comment__author-avatar">
+                                <img src="../../front/assets/images/samples/avatar-7.jpg" alt="">
+                              </figure>
+                              <div class="comment__author-info">
+                                <h5 class="comment__author-name">The Speedtester</h5>
+                                <time class="comment__post-date" datetime="2016-08-23">3 hours ago</time>
+                              </div>
+                            </div>
+                            <div class="comment__reply">
+                              <a href="#" class="comment__reply-link btn btn-link btn-xs">Reply</a>
+                            </div>
+                          </header>
+                          <div class="comment__body">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </li>-->
+                  <!-- Réponse commentaire -->
 
 
 
-        <!-- Réponse Modal fotsiny-->
-        <div class="modal fade" id="modal-reply" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg modal--login" role="document">
-            <div class="modal-body">
-            <form action="{{route('reply')}}"  method="POST" class="comment-form">
+                  <!-- Formulaire Réponse commentaire -->
+                  <div id="myDIV">
 
-                <input type="hidden" value="{!!csrf_token()!!}" name="_token" />
-                <input type="hidden" value="{!!$article->id!!}" name="ref" />
-                <input type="hidden" value="{!!$comments->id!!}" name="repl" />
-                   
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="control-label" for="name">Nom</label>
-                        <input type="text" value="Votre nom ici ..." name="name" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="control-label" for="email">Email</label>
-                        <input type="email" value="Votre email ici ..." name="email" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label" for="comment">VotreRéponse</label>
-                    <textarea name="comment" value="Votre Commentaire ici ..." rows="7" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-default btn-block btn-lg">Répondre</button>
-                  </div>
-                </form>
+              <div class="post-comment-form__content card__content">
+                              <form action="{{route('reply')}}"  method="POST" class="comment-form">
 
-                </div>
-            </div>
-          </div>
-    <!-- Réponse Modal fotsiny/ End -->
+                              <input type="hidden" value="{!!csrf_token()!!}" name="_token" />
+                              <input type="hidden" value="{!!$article->id!!}" name="ref" />
+                              <input type="hidden" value="{!!$comments->id!!}" name="repl" />
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label class="control-label" for="name">Nom</label>
+                                      <input type="text" name="name" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label class="control-label" for="email">Email</label>
+                                      <input type="email" name="email" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label" for="comment">Votre Réponse</label>
+                                  <textarea name="comment" rows="7" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                  <button type="submit" class="btn btn-default btn-block btn-lg">Répondre</button>
+                                </div>
+                              </form>
+                            </div>
+              </div>
+                  <!-- Fin/Formulaire Réponse commentaire -->
+
 
 
 @endforeach
@@ -382,7 +398,6 @@
           </div>
           <!-- Player Sidebar / End -->
         </div>
-
 
 
 

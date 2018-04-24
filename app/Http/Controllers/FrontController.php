@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DateTime;
 use App\Article;
 use App\Image;
+use App\Reply;
 use App\ImageFond;
 use App\Publicite;
 use App\Comment;
@@ -21,10 +22,23 @@ use App\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    private $article;
+    private $comment;
+    private $reply;
     private $image;
 
     public function __construct()
     {
+        $this->article = new Article();
+        $this->image = new Image();
+        $this->comment = new Comment();
+        $this->reply = new Reply();
+
         $this->image = new Image();
     }
     /**
@@ -197,15 +211,17 @@ class FrontController extends Controller
         $images = Image::where('id',$article->images_id)->get();
         $images2 = Image::where('id',$article->images_id)->first();
         $coms = Comment::where('article_id',$article->id)->paginate(5);
-       
+        foreach($coms as $com)
+            {
+                $reponse = $this->reply->getReplies($com->id);
+            }
            $artout = DB::table('articles')->join('images','articles.images_id','=','images.id')->select('articles.*', 'images.urlimage')->where('articles.statut',true)->where('articles.archive',false)->orderBy('created_at', 'asc')->get();
 
            $commentaire[] = DB::table('articles')->join('comments','articles.id','=','comments.article_id')->select('comments.*')->where('comments.article_id','$article->id')->orderBy('created_at', 'desc')->get();
            //dd($article->id);
           /*  foreach($images2 as $img)
             {
-                $affimage =  explode('|',$img->urlimage);
-                   
+                $affimage =  explode('|',$img->urlimage);    
             }*/
             
             foreach($coms as $comment)
@@ -225,7 +241,7 @@ class FrontController extends Controller
             
             //Fin ici pour recuperer le 1er image de l'article
 
-        return view('frontjers.pages.articleshow',compact('coms', 'commentaire','fond2','fond1','article','images','images2','id','artout','conter','trop','affimage'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('frontjers.pages.articleshow',compact('coms', 'commentaire','reponse','fond2','fond1','article','images','images2','id','artout','conter','trop','affimage'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

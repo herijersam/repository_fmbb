@@ -453,14 +453,14 @@
                 <span class="btn-social-counter__add-icon"></span>
               </a>
               <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmadagascarbasketball%2F&tabs=timeline&width=378&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1486609321428645" width="400" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-              <a href="#" class="btn-social-counter btn-social-counter--rss" target="_blank">
+             <!-- <a href="#" class="btn-social-counter btn-social-counter--rss" target="_blank">
                 <div class="btn-social-counter__icon">
                   <i class="fa fa-rss"></i>
                 </div>
-                <h6 class="btn-social-counter__title">Subscribe to Our RSS</h6>
-                <span class="btn-social-counter__count"><span class="btn-social-counter__count-num">840</span> Subscribers</span>
+                <h6 class="btn-social-counter__title">S'abonner dans notre RSS</h6>
+                <span class="btn-social-counter__count"><span class="btn-social-counter__count-num">840</span> Abonnées</span>
                 <span class="btn-social-counter__add-icon"></span>
-              </a>
+              </a>-->
             </aside>
             <!-- Widget: Social Buttons / End -->
             

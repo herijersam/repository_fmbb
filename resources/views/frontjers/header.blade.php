@@ -100,12 +100,12 @@
           <!-- Account Navigation -->
           <ul class="nav-account">
             @if(Auth::check())
-            <li class="nav-account__item nav-account__item--logout"><a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deconnection</a></li>
-            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
+              <li class="nav-account__item nav-account__item--logout"><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deconnection</a></li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
             @else
-            <li class="nav-account__item"><a href="#" data-toggle="modal" data-target="#modal-login-register">Se connecter</a></li>
+              <li class="nav-account__item"><a href="#" data-toggle="modal" data-target="#modal-login-register">Se connecter</a></li>
             @endif
           </ul>
           <!-- Account Navigation / End -->

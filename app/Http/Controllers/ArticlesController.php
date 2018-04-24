@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Image;
 use App\Comment;
+use App\Reply;
 use File;
 
 use App\Http\Requests\UploadRequest;
@@ -24,7 +25,19 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $article;
+    private $image;
+    private $comment;
+    private $reply;
     
+    public function __construct()
+    {
+        $this->article = new Article();
+        $this->image = new Image();
+        $this->comment = new Comment();
+        $this->reply = new Reply();
+    }
+
     public function ind()
     {
         
@@ -245,12 +258,19 @@ public function depublication(Request $request,$id)
     {
         
         $article = Article::find($id);
-
+        
         $images = Image::where('id',$article->images_id)->first();
-
+         
         $coms = Comment::where('article_id',$article->id)->get();
+           
+        foreach($coms as $com)
+            {
+                $reponse = $this->reply->getReplies($coms->id);
+                
+            }
+      //  $reply = Reply::where('article_id',$article->id)->where('article_id',$article->id)->get();
 
-        return view('articles.pages.show',compact('article','images','id','coms'));
+        return view('articles.pages.show',compact('article','reponse','images','id','coms'));
 
     }
 

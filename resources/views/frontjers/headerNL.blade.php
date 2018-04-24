@@ -60,7 +60,14 @@
         padding-bottom: 65px;
     }
 
-
+/*slide réponse commentaire*/
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+/*fin slide réponse commentaire*/
 
   </style>
 

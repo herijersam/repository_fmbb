@@ -55,7 +55,7 @@ class SocialController extends Controller
 
         if($user){
             Auth::guard()->login($user, true);
-            return redirect('/front/accueil');
+            return redirect('/accueil');
         }
 
         //Je vérifie si j'ai un email
@@ -68,7 +68,7 @@ class SocialController extends Controller
                 $user->$field = $providerUser->id;
                 $user->save();
                 Auth::guard()->login($user, true); // true pour garder l'utilisateur connecté ( remember me )
-                return redirect('/front/accueil');
+                return redirect('/accueil');
             }
         }
 
@@ -80,7 +80,7 @@ class SocialController extends Controller
         ]);
 
         if($user) Auth::guard()->login($user, true);
-        return redirect('/front/accueil');
+        return redirect('/accueil');
 
     }
 

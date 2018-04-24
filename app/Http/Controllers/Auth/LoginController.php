@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/front/accueil';
+    protected $redirectTo = '/accueil';
 
     /**
      * Create a new controller instance.
@@ -53,7 +53,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * .
      *
      * @return Response
      */
@@ -70,7 +70,7 @@ class LoginController extends Controller
 //google
 
 /**
-     * Redirect the user to the facebook authentication page.
+     * Redirect the user to the google authentication page.
      *
      * @return Response
      */
@@ -80,7 +80,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * 
      *
      * @return Response
      */

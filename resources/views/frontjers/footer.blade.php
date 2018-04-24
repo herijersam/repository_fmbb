@@ -173,7 +173,7 @@
                     <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmer les mots de passe..." required >
                   </div>
                   <div class="form-group form-group--submit">
-                    <a href="shop-account.html" class="btn btn-primary btn-block">Creer compte</a>
+                    <button type="submit" class="btn btn-primary btn-block">Creer compte</button>
                   </div>
                   <div class="modal-form--note"></div>
                   
@@ -213,7 +213,7 @@
                     <a href="">Mot de passe oublié?</a>
                   </div>
                   <div class="form-group form-group--submit">
-                    <a href="shop-account.html" class="btn btn-primary-inverse btn-block">Login</a>
+                    <button type="submit" class="btn btn-primary-inverse btn-block">Login</button>
                   </div>
                   <div class="modal-form--social">
                     <h5>Login avec les profiles sociales:</h5>
@@ -271,7 +271,7 @@
                     <a href="">Mot de passe oublié?</a>
                   </div>
                   <div class="form-group form-group--submit">
-                    <a href="shop-account.html" class="btn btn-primary-inverse btn-block">Login</a>
+                    <button type="submit" class="btn btn-primary-inverse btn-block">Login</button>
                   </div>
                   <div class="modal-form--social">
                     <h5>Login avec les profiles sociales:</h5>
@@ -351,6 +351,16 @@ jQuery(document).ready(function($) {
   });
   //Fin pour PUB2
 
+  //pour réponse commentaire
+  function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+//pour réponse commentaire
   </script>
 
   <script>

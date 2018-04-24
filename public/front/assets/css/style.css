@@ -1739,7 +1739,7 @@ td.team-leader__avg{text-align:center;}
 }
 @media (min-width:992px){.team-roster--slider{padding:70px 0 20px 0;}
 }
-@media (min-width:1200px){.team-roster--slider{height:720px;padding:98px 0 0 0;}
+@media (min-width:1200px){.team-roster--slider{height:620px;padding:98px 0 0 0;}
 }
 .team-roster--slider .team-roster__item{outline:none;position:relative;}
 @media (min-width:1200px){.team-roster--slider .team-roster__item{padding:0 10px;}
@@ -3329,3 +3329,4 @@ td.team-leader__avg{text-align:center;}
 .mb-0{margin-bottom:0 !important;}
 .mb-20{margin-bottom:20px !important;}
 .mb-30{margin-bottom:30px !important;}
+
