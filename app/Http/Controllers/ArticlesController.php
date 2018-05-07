@@ -266,8 +266,14 @@ public function depublication(Request $request,$id)
         foreach($coms as $com)
             {
                 $reponse = $this->reply->getReplies($coms->id);
-                
+                if($reponse == null)
+                {
+                    return 0;
+                }
+                else
+                return $reponse;
             }
+
       //  $reply = Reply::where('article_id',$article->id)->where('article_id',$article->id)->get();
 
         return view('articles.pages.show',compact('article','reponse','images','id','coms'));
